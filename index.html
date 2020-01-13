@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Compiler</title>
+  <link rel="stylesheet" href="./css/style.css" type="text/css" />
+</head>
+
+<body>
+  <div class="container pt-2">
+
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" id="grammer-tab" data-toggle="tab" href="#grammer" role="tab" aria-controls="grammer"
+          aria-selected="true">Grammer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="goto-graph-tab" data-toggle="tab" href="#goto-graph-cont" role="tab"
+          aria-controls="goto-graph-cont" aria-selected="true">GOTO graph</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" id="lr-items-tab" data-toggle="tab" href="#lr-items-cont" role="tab"
+          aria-controls="lr-items-cont" aria-selected="true">LR(1) Items</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="parsing-table-cont-tab" data-toggle="tab" href="#parsing-table-cont" role="tab"
+          aria-controls="parsing-table-cont" aria-selected="false">Parsing Table</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="parsing-log-cont-tab" data-toggle="tab" href="#parsing-log-cont" role="tab"
+          aria-controls="parsing-table-cont" aria-selected="false">Parse</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+
+      <div class="tab-pane fade" id="goto-graph-cont" role="tabpanel" aria-labelledby="goto-graph-tab">
+        <div id="goto-graph"></div>
+      </div>
+
+      <div class="tab-pane fade" id="grammer" role="tabpanel" aria-labelledby="grammer-tab">
+        <div class="p-4">
+          <h3>Grammer</h3>
+          
+          <div class="alert alert-danger d-none" role="alert" id="processing-result"></div>
+          
+          <form id="grammer-form">
+
+            <label for="terminals-input">Terminals</label>
+            <input id="terminals-input" class="form-control" placeholder='e.g ["c", "d"]' value='["c", "d"]' />
+            <small id="terminals-input-error" class="error"></small>
+            <small class="form-text text-muted">Enter "double quoted" terminals seperated by comma and inside [ and ]
+              e.g
+              ["c","d"].</small>
+            <hr>
+
+            <label for="non-terminals-input">Non Terminals</label>
+            <input id="non-terminals-input" class="form-control" placeholder='e.g ["S", "C"]' value='["S", "C"]' />
+            <small id="non-terminals-input-error" class="error"></small>
+            <small class="form-text text-muted">Enter "double quoted" non-terminals seperated by comma and inside [ and
+              ] e.g
+              ["S", "C"].</small>
+            <hr>
+
+            <label for="start-terminal-input">Start Symbol</label>
+            <input id="start-terminal-input" class="form-control" placeholder='e.g. "S"' value='"S"' />
+            <small id="start-terminal-input-error" class="error"></small>
+            <small class="form-text text-muted">Enter start terminal inside "double quotes".</small>
+            <hr>
+
+            <label for="productions-input">Productions</label>
+            <textarea id="productions-input" class="form-control highlight dark" rows="15"
+              placeholder="Productions in json format">
+            </textarea>
+            <small id="productions-input-error" class="error"></small>
+            <small class="form-text text-muted">
+              <pre class="highlight" id="productions-input-example"></pre>
+            </small>
+
+            <button type="submit" id="parse-grammer-btn" class="btn btn-primary my-2">Set Grammer</button>
+          </form>
+
+        </div>
+      </div>
+
+      <div class="tab-pane fade show active" id="lr-items-cont" role="tabpanel" aria-labelledby="lr-items-tab">
+      </div>
+
+      <div class="tab-pane fade" id="parsing-table-cont" role="tabpanel" aria-labelledby="parsing-table-cont">
+      </div>
+
+      <div class="tab-pane fade" id="parsing-log-cont" role="tabpanel" aria-labelledby="parsing-log-cont">
+
+        <div class="py-2">
+          <form id="parse-form">
+            <label for="parse-input">Input</label>
+            <input type="text" class="form-control mb-2 mr-sm-2" id="parse-input" placeholder="eg. cdcd" />
+
+            <button type="submit" id="parse-btn" class="btn btn-primary mb-2">Parse</button>
+          </form>
+          <div class="alert alert-success d-none" role="alert" id="parse-result"></div>
+        </div>
+
+        <div id="parsing-log-table-cont"></div>
+
+      </div>
+
+    </div>
+  </div>
+  <script src="./js/dist/bundle.js"></script>
+</body>
+
+</html>

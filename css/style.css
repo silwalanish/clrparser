@@ -1,0 +1,44 @@
+#goto-graph {
+  width: 100%;
+  height: 80vh;
+  border: 1px solid lightgray;
+}
+
+.highlight {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #eeeeee;
+}
+
+.highlight.dark {
+  background-color: #002b36;
+  color: #4ad415;
+}
+
+.highlight.dark:focus {
+  background-color: #002b36;
+  color: #eeeeee;
+}
+
+.error {
+  color: #d44a15;
+}
+
+.graph-tooltip{
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1000;
+  display: none;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.graph-tooltip .list-group .list-group-item{
+  padding: 2px;
+}
+
+.graph-tooltip.show{
+  display: inline-block;
+}
