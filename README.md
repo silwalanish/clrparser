@@ -36,9 +36,11 @@ yarn watch
 
 Open `index.html` with a modern web browser.
 
+[Live Demo](https://silwalanish.github.io/clrparser/index.html)
+
 ## Documentation
 
-[Documentation Here](docs/index.html)
+[Documentation Here](https://silwalanish.github.io/clrparser/docs/)
 
 Generate documentation
 
